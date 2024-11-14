@@ -1,4 +1,4 @@
-// Load CSV data on page load
+ // Load CSV data on page load
 document.addEventListener('DOMContentLoaded', async () => {
     await loadCSVData();
     let localData = JSON.parse(localStorage.getItem('websites')) || [];
@@ -22,6 +22,10 @@ function parseCSV(data) {
     const rows = data.split("\n");
     const websites = rows.slice(1).map(row => {
         const [website_name, category, country, launch_year, monthly_visitors, user_name, login_time, comment, feedback, rating] = row.split(",");
+        // Skip empty or malformed rows
+        if (!website_name || !category || !country || !launch_year || !monthly_visitors || !user_name || !login_time || !comment || !feedback || !rating) {
+            return null;
+        }
         return { 
             website_name, 
             category, 
@@ -34,7 +38,7 @@ function parseCSV(data) {
             feedback, 
             rating 
         };
-    }).filter(website => website !== null);  // Remove empty rows
+    }).filter(website => website !== null);  // Remove null (empty) rows
     return websites;
 }
 
