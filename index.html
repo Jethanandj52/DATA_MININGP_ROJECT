@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Websites</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Manage Websites</h1>
+
+    <div>
+        <label for="search">Search by Website Name:</label>
+        <input type="text" id="search" onkeyup="searchWebsite()" placeholder="Search...">
+    </div>
+
+    <button onclick="addWebsite()">Add Website</button>
+
+    <h2>Website Information</h2>
+    <table id="websiteTable">
+        <thead>
+            <tr>
+                <th>Website Name</th>
+                <th>Category</th>
+                <th>Country</th>
+                <th>Launch Year</th>
+                <th>Monthly Visitors</th>
+                <th>User Name</th>
+                <th>Login Time</th>
+                <th>Comment</th>
+                <th>Feedback</th>
+                <th>Rating</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Website rows will be populated here -->
+        </tbody>
+    </table>
+  <script src="app.js"></script>
+</body>
+</html>
