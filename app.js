@@ -1,4 +1,4 @@
- // Load CSV data on page load
+// Load CSV data on page load
 document.addEventListener('DOMContentLoaded', async () => {
     await loadCSVData();
     let localData = JSON.parse(localStorage.getItem('websites')) || [];
